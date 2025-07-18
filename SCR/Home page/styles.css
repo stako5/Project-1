@@ -1,0 +1,66 @@
+
+body {
+  background-color: red;
+}
+
+
+
+
+
+
+header {
+  background-color: #018ADA;
+  padding: 5px;
+  margin: 10px;
+  width: 100vw;
+  border-radius: 40px;
+  box-shadow: 7px 7px 30px black;
+  
+}
+
+
+#titleHeader {
+  display: flex;
+  justify-content: center;;
+  font-family: fantasy;
+  color: yellow;
+  font-size: 4.5em;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 7px 7px 20px rgb(54, 4, 125) ;
+  
+}
+
+#pokeballArea {
+  position:absolute;
+  animation: moveRight 40s linear infinite;
+}
+
+@keyframes moveRight {
+  from {
+    left: 0;
+  }
+  to {
+    left: 96vw;
+  }
+}
+
+
+#playArea {
+  background: #98fb98;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 40px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.grass {
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: linear-gradient(to top, #346504 55%, #0d1f0d 100%);
+  margin: 5px;
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 6px rgba(0,0,0,0,2);
+}
