@@ -10,10 +10,12 @@ body {
 
 header {
   background-color: #018ADA;
-  padding: 5px;
-  margin: 10px;
-  width: 100vw;
-  border-radius: 40px;
+  padding: 0px;
+  margin: 9.5px;
+  width: 97vw;
+  height: 250px;
+  border: 10px solid rgb(238, 231, 231);
+  border-radius: 100px;
   box-shadow: 7px 7px 30px black;
   
 }
@@ -30,37 +32,32 @@ header {
   
 }
 
-#pokeballArea {
-  position:absolute;
-  animation: moveRight 40s linear infinite;
+
+.field {
+  position: relative;
+  width: 97vw;
+  height: 69vh;
+  padding: 0px;
+  margin: 9.5px;
+  background-color: green;
+  border: 10px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  box-shadow: 0 4px 12px #0003;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes moveRight {
-  from {
-    left: 0;
-  }
-  to {
-    left: 96vw;
-  }
-}
-sf
 
-#playArea {
-  background: #98fb98;
-  width: 100vw;
-  height: 100vh;
-  padding: 0;
-  margin: 40px;
-  border-radius: 10px;
+
+#pokeball {
   position: absolute;
+  width: 80px;
+  height: 80px;
 }
 
-.grass {
-  position: absolute;
-  width: 5px;
-  height: 20px;
-  background: linear-gradient(to top, #346504 55%, #0d1f0d 100%);
-  margin: 5px;
-  transform: rotate(-10deg);
-  box-shadow: 0 4px 6px rgba(0,0,0,0,2);
+#pokemon-sprite {
+  width: 200px;
+  height: auto;
 }

@@ -6,17 +6,19 @@
   <link rel="stylesheet" href="styles.css">
   <title>Pokemon Finder</title>
 </head>
-<body>
-  <header>
-    <h1 id="titleHeader">Where is my Pokemon.</h1>
-    <div id="pokeballArea">
-    <img id="pokeball" src="https://static.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png" alt="Poké Ball" width="50">
-    </div>
-  </header>
-  <div id="playArea">
-    <div class="grass"></div>
-  </div>
-</body>
-<script src="app.js"></script>
+  <body>
+    <header>
+      <h1 id="titleHeader">Where is my Pokemon.</h1>
+    </header>
+    <main id="pokeBallField">
+      <div class="field">
+        <img id="pokeball" src="https://static.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png">
+        <div>
+          <label for="PokemonSprite"></label>
+          <img id='pokemon-sprite' name="PokemonSprite" src=""style="position:absolute;display:none">
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="app.js"></script>
 </html>
-//sf
