@@ -14,6 +14,8 @@ class Pokeball {
   }
 }
 let currentPokemonCry = '';
+let pokemonName = '';
+let pokemonStats = '';
 
 function fetchRandomPokemon(sprite) {
   //random number to feed in to the URL retrieval and grab that pokemons shiny sprite
@@ -25,7 +27,18 @@ function fetchRandomPokemon(sprite) {
     .then(data => {
       const pokemonSprite = data.sprites.front_shiny;
       sprite.src = pokemonSprite;
-      currentPokemonCry = data.cries.latest;  
+      currentPokemonCry = data.cries.latest;
+      pokemonName = data.name;
+      document.getElementById('pokemon-name').textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+      pokemonStats = data.stats;
+      document.getElementById('pokemon-stats').statsElement.innerHTML = '';
+      pokemonStats.forEach(statObj => {
+        const statName = statObj.stat.name;
+        const statValue = statObj.base_stat;
+        const statline = document.createElement('div');
+        statline.textContent = `${statName.charAt(0).toUpperCase()+= statName.slice(1)}: ${statValue}`;
+        statsElement.appendChild(statline);
+      })
     })
 }
 
@@ -77,20 +90,6 @@ class MovePokeball extends Pokeball {
   }
   
 }
-
-
-
-// const maxPokemon = 151
-// const randomId = Math.floor(Math.random() * maxPokemon) + 1
-// // Fetches the sprite from the json of the Api to show up on the scr of the <img id='pokemon-sprite' it will show hidden until the pokeball move a certain distance.
-
-// fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`)
-//   .then(response => response.json())
-//   .then(data => {
-//     const pokemonSprite = data.sprites.front_shiny;
-//     console.log(pokemonSprite);
-//     document.getElementById('pokemon-sprite').src = pokemonSprite
-//   })
 
 //takes the sprite image(API) and pokeball(url) and goes the the MovePokeball to call them to go through the function.
 const pokemonSprite = document.getElementById('pokemon-sprite')
