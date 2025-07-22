@@ -15,7 +15,6 @@ class Pokeball {
 }
 let currentPokemonCry = '';
 let pokemonName = '';
-let pokemonStats = '';
 
 function fetchRandomPokemon(sprite) {
   //random number to feed in to the URL retrieval and grab that pokemons shiny sprite
@@ -30,18 +29,20 @@ function fetchRandomPokemon(sprite) {
       currentPokemonCry = data.cries.latest;
       pokemonName = data.name;
       document.getElementById('pokemon-name').textContent = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
-      pokemonStats = data.stats;
-      document.getElementById('pokemon-stats').statsElement.innerHTML = '';
-      pokemonStats.forEach(statObj => {
+      const pokemonStats = document.getElementById('pokemon-stats');
+      pokemonStats.innerHTML = '';//makes the html default to a empty string.
+      data.stats.forEach(statObj => {
+        // Grabs each name of the stats object
         const statName = statObj.stat.name;
+        //Grabs each base stat of each object with name
         const statValue = statObj.base_stat;
-        const statline = document.createElement('div');
-        statline.textContent = `${statName.charAt(0).toUpperCase()+= statName.slice(1)}: ${statValue}`;
-        statsElement.appendChild(statline);
-      })
+        //Creates a new div for each base stat
+        const statLine = document.createElement('div');
+        statLine.textContent = `${statName.charAt(0).toUpperCase() + statName.slice(1)}: ${statValue}`;
+        pokemonStats.appendChild(statLine);
     })
+  })
 }
-
 // When pokemon is click it will make a cry using the URL to play a with Audio and Play function built into Javascript.
 document.getElementById('pokemon-sprite').addEventListener('click', function() {
   if (currentPokemonCry) {

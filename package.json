@@ -4,6 +4,7 @@
   "description": "first app pokemon finder",
   "main": "index.js",
   "scripts": {
+    "start": "live-server src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/stako5/Project-1#readme",
   "devDependencies": {
-    "jest": "^30.0.4"
+    "jest": "^30.0.4",
+    "live-server": "^1.2.2"
   }
 }
