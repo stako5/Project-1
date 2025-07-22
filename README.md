@@ -4,9 +4,6 @@ Pokemon Finder: Step-by-Step Setup & Usage
 
 This webpage lets you move a Poké Ball around an arena. When a Pokémon appears, its name will show up, and you can click on it to hear the Pokémon’s call.
 
-1. Download the Code
-   Go to: https://github.com/stako5/Project-1
-
 Download or clone the repository to your computer.
 
 2. Open in an IDE
@@ -26,18 +23,15 @@ npm install
 Make sure Live Server is downloaded and enabled.
 
 5. Start the Project
-   There’s a start script in package.json:
-
-json:
-"start": "live-server src"
-You can start the server by running:
 
 bash:
 npm start
+
 or by right-clicking the src folder and selecting "Open with Live Server" if using the extension manually.
 
 6. Use the Webpage
-   The webpage will open in your browser.
+
+The webpage will open in your browser.
 
 Use the arrow keys to move the Poké Ball around the arena.
 
